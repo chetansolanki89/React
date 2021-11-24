@@ -1,0 +1,21 @@
+.body{
+    width: 100%;
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 500px;
+    background-color: tomato;
+}
+.center{
+    width: 60%;
+    height: 500px;
+    background-color: turquoise;
+
+}
+.right{
+    width: 20%;
+    height: 500px;
+    background-color: tomato;
+
+}
