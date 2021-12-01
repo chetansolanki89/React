@@ -1,0 +1,8 @@
+.desc{
+    height: 200px;
+}
+.child:hover{
+    border: 5px solid rgba(0,0,220,0.3);
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0, 0, 220, 0.3);
+}
