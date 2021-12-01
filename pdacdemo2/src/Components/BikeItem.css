@@ -1,0 +1,12 @@
+.bitem {
+  display: flex;
+  width: 50%;
+}
+.bitem img {
+  width: fit-content;
+}
+.bcol{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

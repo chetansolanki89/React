@@ -1,0 +1,10 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.item:hover {
+  border: 2px solid black;
+}
