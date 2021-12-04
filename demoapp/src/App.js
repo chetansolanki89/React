@@ -9,11 +9,13 @@ import FilteringParent from "./Components/FunctionalComponents/FilteringParent";
 
 // import { Counter } from "./Components/FunctionalComponents/Counter"; //Counter
 
-
 import { Tabs, Tab } from "react-bootstrap";
+import ConditionalRender from "./Components/ConditionalRendering/ConditionalRender";
+import ConditionalPhoto from "./Components/ConditionalRendering/ConditionalPhoto";
+import { productsData } from "./Components/FunctionalComponents/filteringReducer";
+import FilterPPrac from "./Components/FunctionalComponents/FilterPPrac";
 
 function App() {
-
   return (
     <div className="App">
       {/* <ClassComp1/>
@@ -28,12 +30,12 @@ function App() {
       <Carosbutton/> */}
       {/* <MappingParent /> */}
 
-      <Tabs
+      {/* <Tabs
         defaultActiveKey="profile"
         id="uncontrolled-tab-example"
         className="mb-3"
       >
-        
+
         <Tab eventKey="dryfruits" title="Dry Fruits">
           <FilteringParent pval={"dry fruits"} />
         </Tab>
@@ -46,8 +48,13 @@ function App() {
         <Tab eventKey="grains" title="Grains">
           <FilteringParent pval={"grains"} />
         </Tab>
-      </Tabs>
+      </Tabs> */}
 
+      {/* <ConditionalRender /> */}
+
+      <FilterPPrac productData={productsData}/>
+
+      {/* <ConditionalPhoto/> */}
 
       {/* <Counter/>  */}
     </div>
