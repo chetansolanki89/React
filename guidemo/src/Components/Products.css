@@ -1,0 +1,21 @@
+.carddiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .item{
+    margin: 10px;
+  }
+  .item:hover{
+    border: 3px solid rgba(200,200,200,0.3);
+    box-shadow: 8px 3px rgba(200,200,200,0.3);
+    border-radius: 5px;
+
+  }
+.main{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
