@@ -8,15 +8,21 @@ const Products = () => {
   const [text, setText] = useState("");
 
   const handleFiltered = () => {
-    const filtProd = products.data.filter((elem) =>
-      elem.category.toUpperCase().includes(text.toUpperCase()) || elem.name.toUpperCase().includes(text.toUpperCase().trim())
+    const filtProd = products.data.filter(
+      (elem) =>
+        elem.category.toUpperCase().includes(text.toUpperCase()) ||
+        elem.name.toUpperCase().includes(text.toUpperCase().trim())
     );
     console.log(filtProd);
     return text !== "" ? setProd(filtProd) : setProd(products.data);
   };
 
   useEffect(() => {
-    console.log("This is mounting hook.")
+    handleFiltered();
+    console.log(text);
+  }, [text]);
+  useEffect(() => {
+    console.log("This is mounting hook.");
   }, []);
   return (
     <div className="main">
@@ -31,9 +37,9 @@ const Products = () => {
           aria-label="Username"
           aria-describedby="basic-addon1"
         />
-        <Button onClick={handleFiltered} variant="warning">
+        {/* <Button onClick={handleFiltered} variant="warning">
           Search Category
-        </Button>
+        </Button> */}
       </InputGroup>
 
       {/* <button onClick={() => handleFiltered()}>Search</button>{" "} */}
