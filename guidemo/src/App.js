@@ -1,6 +1,7 @@
 import "./App.css";
 import Products from "./Components/Products";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LifeCycleMethods from "./Components/ClassComponents/LifeCycleMethods";
 import UseEffectParent from "./Components/FunctionalComponents/UseEffectParent";
 import UseStatePreserve from "./Components/UseStatePreserve";
@@ -11,21 +12,39 @@ import APICall from "./Components/APICall";
 import PhotoAPI from "./Components/PhotoAPI";
 import { PracAPI } from "./Components/PracAPI";
 import { PracticeAPI } from "./Components/PracticeAPI";
+import { LiveAPI } from "./Components/LiveAPI";
+import ClassLifeCount from "./Components/ClassComponents/ClassLifeCount";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
     <div className="App">
+      <div>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Products />} />
+            <Route path="/products" element={<ProductsAPI />} />
+            <Route path="/api" element={<APICall />} />
+            <Route path="/photo" element={<PhotoAPI />} />
+            <Route path="/live" element={<LiveAPI />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+
       {/* <Products/> */}
       {/* <LifeCycleMethods/> */}
       {/* <UseEffectParent /> */}
       {/* <UseStatePreserve/> */}
       {/* <StatePreserve/> */}
       {/* <API/> */}
-      {/* <ProductsAPI/> */}
+      {/* <ProductsAPI /> */}
       {/* <APICall/> */}
       {/* <PhotoAPI/> */}
       {/* <PracAPI/> */}
-      <PracticeAPI/>
+      {/* <PracticeAPI/> */}
+      {/* <LiveAPI/> */}
+      {/* <ClassLifeCount/> */}
     </div>
   );
 }
