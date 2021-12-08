@@ -29,12 +29,18 @@ const ProductsAPI = () => {
     return text !== "" ? setProd(filtProd) : setProd(prod);
   };
 
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((res) => {
-      //console.log(res.data);
-      setJsonData(res.data);
-      setProd(res.data);
-    });
+  const callData=async ()=>{ //This is Async call using async-await
+    const result=await axios.get("https://fakestoreapi.com/products");
+    setProd(result.data)
+  }
+
+  useEffect(() => {// Below commented is Async call using promise
+    // axios.get("https://fakestoreapi.com/products").then((res) => {
+    //   //console.log(res.data);
+    //   setJsonData(res.data);
+    //   setProd(res.data);
+    // });
+    callData();
   }, []);
 
   useEffect(() => {
