@@ -4,20 +4,48 @@ import "./App.css";
 // import { Carosbutton } from "./Components/Carosbutton";
 // import ClassComp from "./Components/classcomponent/ClassComp";
 // import ClassComp1 from "./Components/classcomponent/ClassComp1";
-// import MappingParent from "./Components/FunctionalComponents/MappingParent";
+import MappingParent from "./Components/FunctionalComponents/MappingParent";
 import FilteringParent from "./Components/FunctionalComponents/FilteringParent"; //Cart
 
-// import { Counter } from "./Components/FunctionalComponents/Counter"; //Counter
+import { Counter } from "./Components/FunctionalComponents/Counter"; //Counter
 
 import { Tabs, Tab } from "react-bootstrap";
 import ConditionalRender from "./Components/ConditionalRendering/ConditionalRender";
 import ConditionalPhoto from "./Components/ConditionalRendering/ConditionalPhoto";
 import { productsData } from "./Components/FunctionalComponents/filteringReducer";
 import FilterPPrac from "./Components/FunctionalComponents/FilterPPrac";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavigationBar from "./Components/NavigationBar";
+import Watch from "./Components/FunctionalComponents/Watch";
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <NavigationBar />
+        <Routes>
+          <Route
+            path="/"
+            element={<MappingParent/>}
+          />
+          <Route
+            path="/counter"
+            element={<Counter/>}
+          />
+          <Route
+            path="/mapping"
+            element={<MappingParent />}
+          />
+          <Route
+            path="/conditionalRender"
+            element={<ConditionalRender />}
+          />
+          <Route
+            path="/watch"
+            element={<Watch/>}
+          />
+        </Routes>
+      </BrowserRouter>
       {/* <ClassComp1/>
       <ClassComp/>
       <Button variant="primary">Primary</Button>
@@ -52,7 +80,7 @@ function App() {
 
       {/* <ConditionalRender /> */}
 
-      <FilterPPrac productData={productsData}/>
+      {/* <FilterPPrac productData={productsData} /> */}
 
       {/* <ConditionalPhoto/> */}
 

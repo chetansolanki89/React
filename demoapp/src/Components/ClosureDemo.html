@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Closure Demo</h1>
+    <h4>Inspect this page.</h4>
+    <h4>Then go to Sources--->src--->ClosureDemo.html.</h4>
+    <h4>Then put a break point on console.log() in the Inner().</h4>
+    <h4>Refresh the page and you will see that the page loading is stopped at the break point.</h4>
+    <h4>Now go to Scope and monitor the Local, Closure and Global scopes on the page.</h4>
+    <script>
+      var country = "India";
+      function Outer() {
+        var fname = "Chetan";
+        var city = "Nanded";
+        function Inner() {
+          var lname = "Solanki";
+          console.log("Name: ", fname + " " + lname);
+          console.log("City: ", city);
+          console.log("Country: ", country);
+        }
+        Inner();
+      }
+      Outer();
+    </script>
+  </body>
+</html>
