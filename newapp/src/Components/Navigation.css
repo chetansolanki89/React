@@ -1,0 +1,20 @@
+.main {
+  height: fit-content;
+  background-color: navy;
+  display: flex;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px;
+}
+.link:hover {
+    background-color: tomato;
+    color: navy;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    width: 100px;
+}
