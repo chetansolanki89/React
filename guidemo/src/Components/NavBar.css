@@ -1,4 +1,6 @@
-
+.bar{
+    height: 50px;
+}
 .link{
     background-color:navy;
     text-decoration: none;
@@ -6,4 +8,8 @@
     margin:0px 10px;
     color: white;
     border-radius: 10px;
+}
+.link:hover{
+    color: tomato;
+    padding: 10px 50px;
 }

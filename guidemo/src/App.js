@@ -15,6 +15,9 @@ import { PracticeAPI } from "./Components/PracticeAPI";
 import { LiveAPI } from "./Components/LiveAPI";
 import ClassLifeCount from "./Components/ClassComponents/ClassLifeCount";
 import NavBar from "./Components/NavBar";
+import ReduCounter from "./Components/ReduCounter";
+import CounterReducer from "./Components/CounterReducer";
+import PracUseReducer from "./Components/PracUseReducer";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
             <Route path="/api" element={<APICall />} />
             <Route path="/photo" element={<PhotoAPI />} />
             <Route path="/live" element={<LiveAPI />} />
+            <Route path="/reducounter" element={<ReduCounter />} />
+            <Route path="/counterreducer" element={<CounterReducer />} />
+            <Route path="/pracusereducer" element={<PracUseReducer/>} />
           </Routes>
         </BrowserRouter>
       </div>

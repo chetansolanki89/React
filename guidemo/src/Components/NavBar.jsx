@@ -5,12 +5,15 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div>
+    <div className="bar">
       <Link className="link" to="/">Products</Link>
       <Link className="link" to="/products">ProductsAPI</Link>
       <Link className="link" to="/api">APIFetch</Link>
       <Link className="link" to="/photo">PhotoAPI</Link>
       <Link className="link" to="/live">LiveAPI</Link>
+      <Link className="link" to="/reducounter">ReduCounter</Link>
+      <Link className="link" to="/counterreducer">CounterReducer</Link>
+      <Link className="link" to="/pracusereducer">useReducer</Link>
       {/* <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="/">Home</Navbar.Brand>
