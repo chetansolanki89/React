@@ -1,4 +1,6 @@
 import "./App.css";
+import { Provider } from "react-redux";
+import configStore from "./state/store/configStore";
 import Products from "./Components/Products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -18,24 +20,29 @@ import NavBar from "./Components/NavBar";
 import ReduCounter from "./Components/ReduCounter";
 import CounterReducer from "./Components/CounterReducer";
 import PracUseReducer from "./Components/PracUseReducer";
+import CheckRedux from "./Components/CheckRedux";
 
 function App() {
+  const localStore = configStore();
   return (
     <div className="App">
       <div>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Products />} />
-            <Route path="/products" element={<ProductsAPI />} />
-            <Route path="/api" element={<APICall />} />
-            <Route path="/photo" element={<PhotoAPI />} />
-            <Route path="/live" element={<LiveAPI />} />
-            <Route path="/reducounter" element={<ReduCounter />} />
-            <Route path="/counterreducer" element={<CounterReducer />} />
-            <Route path="/pracusereducer" element={<PracUseReducer/>} />
-          </Routes>
-        </BrowserRouter>
+        <Provider store={localStore}>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<Products />} />
+              <Route path="/products" element={<ProductsAPI />} />
+              <Route path="/api" element={<APICall />} />
+              <Route path="/photo" element={<PhotoAPI />} />
+              <Route path="/live" element={<LiveAPI />} />
+              <Route path="/reducounter" element={<ReduCounter />} />
+              <Route path="/counterreducer" element={<CounterReducer />} />
+              <Route path="/pracusereducer" element={<PracUseReducer />} />
+              <Route path="/checkredux" element={<CheckRedux/>} />
+            </Routes>
+          </BrowserRouter>
+        </Provider>
       </div>
 
       {/* <Products/> */}
