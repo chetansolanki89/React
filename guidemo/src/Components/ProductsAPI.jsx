@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // import { products } from "./productsData";
 import "./Products.css";
 import { Card, Button, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
 
 const ProductsAPI = () => {
+  const selectedProducts = useSelector(
+    (state) => state.productsReducer.products
+  );
+  console.log("Selected: ",selectedProducts)
+
+  const dispatchProducts = useDispatch();
+
   const [prod, setProd] = useState([]);
   const [text, setText] = useState("");
   const [jsonData, setJsonData] = useState([]);
@@ -29,12 +37,22 @@ const ProductsAPI = () => {
     return text !== "" ? setProd(filtProd) : setProd(prod);
   };
 
-  const callData=async ()=>{ //This is Async call using async-await
-    const result=await axios.get("https://fakestoreapi.com/products");
-    setProd(result.data)
-  }
+  const callData = async () => {
+    if (selectedProducts.length > 0) {
+      setProd(selectedProducts);
+    }
+    //This is Async call using async-await
+    const result = await axios.get("https://fakestoreapi.com/products");
+    setProd(result.data);
+    console.log(result.data);
+    dispatchProducts({
+      type: "ADD_PRODUCTS",
+      data: result.data,
+    });
+  };
 
-  useEffect(() => {// Below commented is Async call using promise
+  useEffect(() => {
+    // Below commented is Async call using promise
     // axios.get("https://fakestoreapi.com/products").then((res) => {
     //   //console.log(res.data);
     //   setJsonData(res.data);

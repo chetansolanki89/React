@@ -15,6 +15,7 @@ const NavBar = () => {
       <Link className="link" to="/counterreducer">CounterReducer</Link>
       <Link className="link" to="/pracusereducer">useReducer</Link>
       <Link className="link" to="/checkredux">CheckRedux</Link>
+      <Link className="link" to="/booksapi">BooksAPI</Link>
       {/* <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="/">Home</Navbar.Brand>

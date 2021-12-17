@@ -1,6 +1,5 @@
 import { createStore, combineReducers } from "redux";
 import productsReducer from "../reducer/productsReducer";
-import React from "react";
 
 const configStore = () => {
   const myStore = createStore(

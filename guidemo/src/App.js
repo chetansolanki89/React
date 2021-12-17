@@ -21,6 +21,8 @@ import ReduCounter from "./Components/ReduCounter";
 import CounterReducer from "./Components/CounterReducer";
 import PracUseReducer from "./Components/PracUseReducer";
 import CheckRedux from "./Components/CheckRedux";
+import BooksAPI from "./Components/BooksAPI";
+import BookAPIChild from "./Components/BookAPIChild";
 
 function App() {
   const localStore = configStore();
@@ -40,6 +42,8 @@ function App() {
               <Route path="/counterreducer" element={<CounterReducer />} />
               <Route path="/pracusereducer" element={<PracUseReducer />} />
               <Route path="/checkredux" element={<CheckRedux/>} />
+              <Route path="/booksapi" element={<BooksAPI/>} />
+              <Route path="/booksapichild" element={<BookAPIChild/>} />
             </Routes>
           </BrowserRouter>
         </Provider>

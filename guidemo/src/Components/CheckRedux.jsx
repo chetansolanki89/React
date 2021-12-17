@@ -5,19 +5,19 @@ import { useSelector } from "react-redux";
 
 const CheckRedux = () => {
     const selectData=useSelector(state=>state.productsReducer.products);
-    console.log(selectData)
+    console.log("Store Data: ",selectData)
   const dispatch = useDispatch();
   const handleClick = () => {
     //Logic of Dispatch
     dispatch({
       type: "ADD_PRODUCTS",
-      data: ["Mobile", "T-Shirt", "Shoes"],
+      data: ["Mobile", "T-Shirt", "Shoes","Pen","Pencil"],
     });
   };
   const removeProduct = () => {
     dispatch({
       type: "REMOVE_PRODUCTS",
-      data: ["Pen"],
+      data: "Pen",
     });
   };
   return (
