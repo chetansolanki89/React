@@ -16,6 +16,7 @@ const NavBar = () => {
       <Link className="link" to="/pracusereducer">useReducer</Link>
       <Link className="link" to="/checkredux">CheckRedux</Link>
       <Link className="link" to="/booksapi">BooksAPI</Link>
+      <Link className="link" to="/useref">useRef</Link>
       {/* <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="/">Home</Navbar.Brand>

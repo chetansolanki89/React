@@ -23,13 +23,16 @@ import PracUseReducer from "./Components/PracUseReducer";
 import CheckRedux from "./Components/CheckRedux";
 import BooksAPI from "./Components/BooksAPI";
 import BookAPIChild from "./Components/BookAPIChild";
+import RefFocus from "./Components/RefFocus";
+import ClassTimer from "./Components/ClassComponents/ClassTimer";
+import FunctionalTimer from "./Components/ClassComponents/FunctionalTimer";
 
 function App() {
   const localStore = configStore();
   return (
     <div className="App">
       <div>
-        <Provider store={localStore}>
+        {/* <Provider store={localStore}>
           <BrowserRouter>
             <NavBar />
             <Routes>
@@ -44,9 +47,12 @@ function App() {
               <Route path="/checkredux" element={<CheckRedux/>} />
               <Route path="/booksapi" element={<BooksAPI/>} />
               <Route path="/booksapichild" element={<BookAPIChild/>} />
+              <Route path="/useref" element={<RefFocus/>} />
             </Routes>
           </BrowserRouter>
-        </Provider>
+        </Provider> */}
+        {/* <ClassTimer/> */}
+        <FunctionalTimer/>
       </div>
 
       {/* <Products/> */}
