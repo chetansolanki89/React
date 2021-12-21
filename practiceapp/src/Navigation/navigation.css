@@ -1,0 +1,11 @@
+.link {
+  margin-left: 5px;
+  padding: 0px 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: tomato;
+}
