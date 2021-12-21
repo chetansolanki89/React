@@ -4,7 +4,7 @@ import configStore from "./state/store/configStore";
 import Products from "./Components/Products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LifeCycleMethods from "./Components/ClassComponents/LifeCycleMethods";
+import LifeCycleMethods from "./Components/ClassComponents/LifeCycleMethods/LifeCycleMethods";
 import UseEffectParent from "./Components/FunctionalComponents/UseEffectParent";
 import UseStatePreserve from "./Components/UseStatePreserve";
 import StatePreserve from "./Components/StatePreserve";
@@ -26,6 +26,7 @@ import BookAPIChild from "./Components/BookAPIChild";
 import RefFocus from "./Components/RefFocus";
 import ClassTimer from "./Components/ClassComponents/ClassTimer";
 import FunctionalTimer from "./Components/ClassComponents/FunctionalTimer";
+import CountryAPI from "./Components/FunctionalComponents/CountryAPI";
 
 function App() {
   const localStore = configStore();
@@ -52,7 +53,8 @@ function App() {
           </BrowserRouter>
         </Provider> */}
         {/* <ClassTimer/> */}
-        <FunctionalTimer/>
+        {/* <FunctionalTimer/> */}
+        <CountryAPI />
       </div>
 
       {/* <Products/> */}
