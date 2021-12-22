@@ -27,6 +27,7 @@ import RefFocus from "./Components/RefFocus";
 import ClassTimer from "./Components/ClassComponents/ClassTimer";
 import FunctionalTimer from "./Components/ClassComponents/FunctionalTimer";
 import CountryAPI from "./Components/FunctionalComponents/CountryAPI";
+import Address from "./Components/FunctionalComponents/Address/Address";
 
 function App() {
   const localStore = configStore();
@@ -54,7 +55,8 @@ function App() {
         </Provider> */}
         {/* <ClassTimer/> */}
         {/* <FunctionalTimer/> */}
-        <CountryAPI />
+        {/* <CountryAPI /> */}
+        <Address/>
       </div>
 
       {/* <Products/> */}
