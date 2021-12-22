@@ -1,0 +1,45 @@
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: 4px solid navy;
+  width: 300px;
+  margin: 20px;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: springgreen 10px 0px 10px, springgreen -10px 0px 10px;
+}
+/* img:hover {
+  box-shadow: red 0px 5px 5px, red 0px -5px 5px;
+} */
+
+.card img {
+  margin: 10px 25px;
+}
+.link {
+  text-decoration: none;
+  /* color: white; */
+}
+.link:hover {
+  color: white;
+}
+
+.view:hover {
+  background-color: gold;
+}
+.remove:hover {
+  background-color: red;
+}
+.add:hover {
+  background-color: green;
+}
+
+
+.mui-card:hover{
+  box-shadow: springgreen 5px 5px 10px;
+}
