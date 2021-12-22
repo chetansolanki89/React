@@ -4,14 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { configStore } from "./Redux/Store/configStore";
+import { configStore } from "./Components/D-State/configStore";
 
+// const localStore = configStore();
 const localStore = configStore();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={localStore}>
-      <App />
+    <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
