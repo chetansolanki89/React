@@ -9,9 +9,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import ArtTrackOutlinedIcon from '@mui/icons-material/ArtTrackOutlined';
-import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
-
+import ArtTrackOutlinedIcon from "@mui/icons-material/ArtTrackOutlined";
+import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 
 const ProductsChild = ({ item }) => {
   const dispatch = useDispatch();
@@ -39,14 +38,14 @@ const ProductsChild = ({ item }) => {
           {item.name.length > 20 ? item.name.substr(0, 20) + "..." : item.name}
         </Typography>
         <Typography variant="h6" component="div">
-          Price: ${item.price}
+          Price: &#x20B9;{Math.ceil(item.price * 75)}
         </Typography>
         {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography> */}
       </CardContent>
-      <CardActions style={{display:"flex", justifyContent:"center"}}>
+      <CardActions style={{ display: "flex", justifyContent: "center" }}>
         <Button
           variant="outlined"
           color="success"
@@ -79,38 +78,6 @@ const ProductsChild = ({ item }) => {
         </Link>
       </CardActions>
     </Card>
-
-    // <div className="card">
-    //   <img src={item.img} width="250px" height="350px" alt="" data-placement="top" title={item.name}/>
-    //   <h5 title={item.name}>{item.name.substr(0, 25) + "..."}</h5>
-    //   <h5>
-    //     <b>Price: ${item.price}</b>
-    //   </h5>
-    //   <p>
-    //     <Button className="add"
-    //       onClick={() =>
-    //         dispatch({
-    //           type: "ADD_TO_CART",
-    //           data: item,
-    //         })
-    //       }
-    //     >
-    //       Add to Cart
-    //     </Button>
-    //     &nbsp;&nbsp;
-    //     <Button className="view"
-    //       onClick={() =>
-    //         dispatch({
-    //           type: "SELECTED_PRODUCT",
-    //           data: [item],
-    //         })
-    //       }
-    //     >
-    //       <Link className="link" to="/selected">View Product</Link>
-    //     </Button>
-    //     {/* {console.log("Cart: ", [item])} */}
-    //   </p>
-    // </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { InputGroup, FormControl } from "react-bootstrap";
@@ -10,11 +10,10 @@ import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 
-const NavBar = () => {
-  const [search, setSearch] = useState("");
+const NavBar = ({setSearch}) => {
   const count = useSelector((state) => state.productsReducer.cart.length);
   console.log("Cart count: ", count);
-  console.log("Search: ", search);
+  // console.log("Search: ", search);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {

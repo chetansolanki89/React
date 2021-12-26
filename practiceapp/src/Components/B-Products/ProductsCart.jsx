@@ -9,20 +9,35 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { IconButton } from "@mui/material";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
-import ArtTrackOutlinedIcon from '@mui/icons-material/ArtTrackOutlined';
-
+import ArtTrackOutlinedIcon from "@mui/icons-material/ArtTrackOutlined";
+import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
+import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
 
 const ProductsCart = () => {
   const cartItems = useSelector((state) => state.productsReducer.cart);
   const dispatch = useDispatch();
+  const cart = new Set(cartItems);
+  const cartUnique = [...cart];
+  const grouped = {};
+  cartUnique.forEach((elem) => {
+    grouped[elem] = grouped[elem] ? grouped[elem] + 1 : 1;
+  });
+  console.log("Grouped: ", grouped);
 
-  console.log(cartItems);
+  // cartItems.forEach((elem)=>{
+  //   cart[elem]=cart[elem]?cart[elem]+1:1
+  // })
+  console.log("Cart: ", cart);
+  console.log("CartUnique: ", cartUnique);
+
+  console.log("Cart Items", cartItems);
   return (
     <React.Fragment>
       <h4>Cart Items</h4>
       <div className="parent">
-        {cartItems.map((item) => {
+        {cartUnique.map((item) => {
           return (
             <Card sx={{ width: 300 }} style={{ margin: "10px" }}>
               <div
@@ -49,7 +64,36 @@ const ProductsCart = () => {
                     : item.name}
                 </Typography>
                 <Typography variant="h6" component="div">
-                  Price: ${item.price}
+                  Price: &#x20B9;{Math.ceil(item.price * 75)}
+                </Typography>
+                <Typography variant="h6" component="div">
+                  Quantity:
+                  <IconButton
+                    color="error"
+                    size="large"
+                    onClick={() => {
+                      // cartItems.filter((elem) => elem === item).length>1?cartItems
+                      dispatch({
+                        type: "REMOVE_PRODUCT",
+                        data: item,
+                      });
+                    }}
+                  >
+                    <RemoveCircleOutlinedIcon />
+                  </IconButton>
+                  {cartItems.filter((elem) => elem.name === item.name).length}
+                  <IconButton
+                    color="success"
+                    size="large"
+                    onClick={() =>
+                      dispatch({
+                        type: "ADD_TO_CART",
+                        data: item,
+                      })
+                    }
+                  >
+                    <AddCircleOutlinedIcon />
+                  </IconButton>
                 </Typography>
                 {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -91,40 +135,6 @@ const ProductsCart = () => {
                 </Button>
               </CardActions>
             </Card>
-
-            // <div className="card">
-            //   <img src={item.img} width="250px" height="350px" alt="" />
-            //   <h4>{item.name.substr(0, 20) + "..."}</h4>
-            //   <h5>
-            //     <b>Price: ${item.price}</b>
-            //   </h5>
-            //   <p>
-            //     <Button className="view"
-            //       onClick={() =>
-            //         dispatch({
-            //           type: "SELECTED_PRODUCT",
-            //           data: [item],
-            //         })
-            //       }
-            //     >
-            //       <Link className="link" to="/selected">
-            //         View Product
-            //       </Link>
-            //     </Button>
-            //     &nbsp;&nbsp;
-            //     <Button className="remove"
-            //       onClick={() =>
-            //         dispatch({
-            //           type: "REMOVE_PRODUCT",
-            //           data: item,
-            //         })
-            //       }
-            //     >
-            //       Remove Product
-            //     </Button>
-            //     {/* {console.log("Cart: ", [item])} */}
-            //   </p>
-            // </div>
           );
         })}
       </div>
