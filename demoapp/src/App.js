@@ -17,11 +17,13 @@ import FilterPPrac from "./Components/FunctionalComponents/FilterPPrac";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar";
 import Watch from "./Components/FunctionalComponents/Watch";
+import ContextParent from "./Components/ContextAPI/ContextParent";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <ContextParent/>
+      {/* <BrowserRouter>
         <NavigationBar />
         <Routes>
           <Route
@@ -45,7 +47,7 @@ function App() {
             element={<Watch/>}
           />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
       {/* <ClassComp1/>
       <ClassComp/>
       <Button variant="primary">Primary</Button>
