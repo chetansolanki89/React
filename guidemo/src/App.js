@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        {/* <Provider store={localStore}>
+        <Provider store={localStore}>
           <BrowserRouter>
             <NavBar />
             <Routes>
@@ -52,11 +52,11 @@ function App() {
               <Route path="/useref" element={<RefFocus/>} />
             </Routes>
           </BrowserRouter>
-        </Provider> */}
+        </Provider>
         {/* <ClassTimer/> */}
         {/* <FunctionalTimer/> */}
         {/* <CountryAPI /> */}
-        <Address/>
+        {/* <Address/> */}
       </div>
 
       {/* <Products/> */}

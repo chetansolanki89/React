@@ -6,7 +6,7 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <div className="bar">
-      <Link className="link" to="/">Products</Link>
+      <Link to="/">Products</Link>
       <Link className="link" to="/products">ProductsAPI</Link>
       <Link className="link" to="/api">APIFetch</Link>
       <Link className="link" to="/photo">PhotoAPI</Link>
