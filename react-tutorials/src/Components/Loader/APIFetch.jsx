@@ -7,27 +7,28 @@ const APIFetch = () => {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState(true);
 
-  const callData = async () => {
+  // const callData = () => {
+  //   setStatus(true);
+  // };
+  const callDataClicked = async () => {
     try {
-      setStatus(false);
-      console.log("Button Clicked");
       const result = await axios.get("https://fakestoreapi.com/products");
       setInterval(() => {
         console.log(result.data);
         setData(result.data);
-        setStatus(true);
+        setStatus(false);
       }, 5000);
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  //   useEffect(() => {
-  //     callData();
-  //   }, []);
+  useEffect(() => {
+    if (status) callDataClicked();
+  }, [status]);
   return (
     <div>
-      <button onClick={callData}>Show Products</button>
+      <button>Show Products</button>
       <div
         style={{
           display: "flex",
@@ -36,7 +37,7 @@ const APIFetch = () => {
           alignItems: "center",
         }}
       >
-        {status === false ? (
+        {status ? (
           // <Loader type="Puff" color="#00BFFF" height={300} width={300} />
           <Loader
             type="BallTriangle"
